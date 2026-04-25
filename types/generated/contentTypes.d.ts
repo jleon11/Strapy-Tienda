@@ -488,7 +488,12 @@ export interface ApiCategoriaCategoria extends Struct.CollectionTypeSchema {
       'api::categoria.categoria'
     > &
       Schema.Attribute.Private;
-    nombre: Schema.Attribute.String;
+    nombre: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
     orden: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     ruta: Schema.Attribute.String;
@@ -518,13 +523,13 @@ export interface ApiProductoProducto extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    descripcion: Schema.Attribute.Blocks;
+    descripcion: Schema.Attribute.Text;
     destacado: Schema.Attribute.Boolean;
     imagenes: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    informacionGeneral: Schema.Attribute.Blocks;
+    informacionGeneral: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -532,9 +537,14 @@ export interface ApiProductoProducto extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     marca: Schema.Attribute.String;
-    nombre: Schema.Attribute.String;
-    precio: Schema.Attribute.Decimal;
-    precioAnteriorValor: Schema.Attribute.Decimal;
+    nombre: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    precio: Schema.Attribute.Integer;
+    precioAnteriorValor: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     stock: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
