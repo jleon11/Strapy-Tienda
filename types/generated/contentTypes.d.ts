@@ -537,6 +537,14 @@ export interface ApiProductoProducto extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     marca: Schema.Attribute.String;
+    MostrarEn: Schema.Attribute.Enumeration<
+      [
+        'PROMO-DEL-MES',
+        'LOS-MAS-BUSCADOS',
+        'LOS-MAS-VENDIDOS',
+        'PRODUCTOS-NUEVOS',
+      ]
+    >;
     nombre: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &

@@ -58,6 +58,15 @@
     },
     "informacionGeneral": {
       "type": "text"
+    },
+    "MostrarEn": {
+      "type": "enumeration",
+      "enum": [
+        "PROMO-DEL-MES",
+        "LOS-MAS-BUSCADOS",
+        "LOS-MAS-VENDIDOS",
+        "PRODUCTOS-NUEVOS"
+      ]
     }
   }
 }
