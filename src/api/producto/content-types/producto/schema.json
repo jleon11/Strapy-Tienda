@@ -59,7 +59,7 @@
     "informacionGeneral": {
       "type": "text"
     },
-    "MostrarEn": {
+    "mostrarEnlaSeccion": {
       "type": "enumeration",
       "enum": [
         "PROMO-DEL-MES",
