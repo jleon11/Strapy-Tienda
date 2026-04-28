@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub-categorias",
+  "info": {
+    "singularName": "sub-categoria",
+    "pluralName": "sub-categorias",
+    "displayName": "Sub-categorias"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "minLength": 3,
+      "required": true
+    },
+    "seoUrl": {
+      "type": "uid",
+      "targetField": "nombre"
+    },
+    "orden": {
+      "type": "integer"
+    },
+    "activa": {
+      "type": "boolean"
+    },
+    "categoria": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categoria.categoria",
+      "required": true
+
+    },
+    "icono": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "string"
+    }
+  }
+}
