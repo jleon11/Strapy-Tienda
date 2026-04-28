@@ -515,10 +515,6 @@ export interface ApiProductoProducto extends Struct.CollectionTypeSchema {
   };
   attributes: {
     activo: Schema.Attribute.Boolean;
-    categoria: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::categoria.categoria'
-    >;
     codigo: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -555,6 +551,11 @@ export interface ApiProductoProducto extends Struct.CollectionTypeSchema {
     precioAnteriorValor: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     stock: Schema.Attribute.Integer;
+    sub_categoria: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::sub-categoria.sub-categoria'
+    > &
+      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

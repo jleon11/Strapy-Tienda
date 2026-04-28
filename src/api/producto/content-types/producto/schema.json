@@ -48,11 +48,6 @@
     "activo": {
       "type": "boolean"
     },
-    "categoria": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::categoria.categoria"
-    },
     "descripcion": {
       "type": "text"
     },
@@ -67,6 +62,12 @@
         "LOS-MAS-VENDIDOS",
         "PRODUCTOS-NUEVOS"
       ]
+    },
+    "sub_categoria": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-categoria.sub-categoria",
+      "required": true
     }
   }
 }
