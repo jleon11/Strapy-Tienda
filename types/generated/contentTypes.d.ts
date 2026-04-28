@@ -496,7 +496,7 @@ export interface ApiCategoriaCategoria extends Struct.CollectionTypeSchema {
       }>;
     orden: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    ruta: Schema.Attribute.String;
+    seoUrl: Schema.Attribute.UID<'nombre'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

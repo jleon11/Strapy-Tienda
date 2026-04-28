@@ -20,11 +20,12 @@
     "icono": {
       "type": "string"
     },
-    "ruta": {
-      "type": "string"
-    },
     "orden": {
       "type": "integer"
+    },
+    "seoUrl": {
+      "type": "uid",
+      "targetField": "nombre"
     }
   }
 }
